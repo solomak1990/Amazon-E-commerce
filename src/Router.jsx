@@ -5,6 +5,7 @@ import Auth from "./Pages/Auth/Auth";
 import Orders from "./Pages/Orders/Orders";
 import Cart from "./Pages/Cart/Cart";
 import Payment from "./Pages/Payment/Payment";
+import Results from "./Pages/Results/Results";
 
 
 function Routering() {
@@ -15,6 +16,7 @@ function Routering() {
         <Route path="/auth" element={<Auth />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/category/:categoryName" element={<Results />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
