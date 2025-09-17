@@ -11,12 +11,12 @@ function Header() {
     <section>
       <div className={classes.header_container}>
       <div className={classes.logo_container}>
-          <a href="#">
+          <Link to="/">
             <img
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="amazon logo"
             />
-          </a>
+          </Link>
           
       <div className={classes.delivery}>
             <span>
@@ -39,7 +39,7 @@ function Header() {
           </div>
 
         <div className={classes.order_container}>
-          <a href="" className={classes.language}>
+          <Link to="/" className={classes.language}>
             <img
               src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
               alt=""
@@ -47,24 +47,24 @@ function Header() {
             <select name="" id="">
               <option value="">EN</option>
             </select>
-          </a>
+          </Link>
 
-          <a href="">
+          <Link to="">
             
               <p>Sign In</p>
               <span>Account & Lists</span>
              
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/orders">
             
               <p>returns</p>
               <span>& Orders</span>
            
-          </a>
-          <a href="" className={classes.cart}>
+          </Link>
+          <Link to="/cart" className={classes.cart}>
             <BiCart size={35} />
             <span>0</span>
-          </a>
+          </Link>
         </div>
       </div>
       <LowerHeader />
