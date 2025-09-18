@@ -1,23 +1,23 @@
-import React from 'react'
-import classes from "./ProductDetail.module.css"
-import { productUrl } from "../../Api/endPoints";
+import React, { useEffect, useState } from "react";
+import classes from "./Productdetail.module.css";
+import Layout from "../../Component/Layout/Layout";
 import { useParams } from "react-router-dom";
-import Layout from '../../Components/Layout/Layout';
-import axios from 'axios';
-import ProductCard from '../../Components/Product/ProductCard';
-import Loader from '../../Components/Loader/Loader';
+import axios from "axios";
+import { productUrl } from "../../Api/endPoints";
+import ProductCard from "../../Component/Product/ProductCard";
+import Loader from "../../Component/Loader/Loader";
+
 function ProductDetail() {
-  const [product, setproduct] = useState({});
+
   const { productId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
-  // console.log(productId);
-
+  const [product, setproduct] = useState();
   useEffect(() => {
-     setIsLoading(true);
+    setIsLoading(true);
     axios
       .get(`${productUrl}/products/${productId}`)
       .then((res) => {
-        // console.log(res.data);
+        
         setproduct(res.data);
         setIsLoading(false);
       })
@@ -28,12 +28,18 @@ function ProductDetail() {
   }, []);
   return (
     <Layout>
-      {isLoading ? <Loader /> : <ProductCard 
-      product={product} />}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ProductCard
+          product={product}
+          flex={true}
+          renderDesc={true}
+          renderAdd={true}
+        />
+      )}
     </Layout>
   );
 }
 
-export default ProductDetail
-
-
+export default ProductDetail;
