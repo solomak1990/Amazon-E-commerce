@@ -17,20 +17,18 @@ function Product() {
   }, []);
 
   return (
-   
-      
-        <section className={classes.products_container}>
-          {
-          products?.map((singleProduct) => {
-            return <ProductCard product={singleProduct}
-                key={singleProduct.id}
-                
-              />
-            
-          })}
-        </section>
-        
-  )
+    
+    <section className={classes.products_container}>
+      {products?.map((singleProduct) => {
+        return (
+          <ProductCard
+            product={singleProduct}
+            key={singleProduct.id}
+                      />
+        );
+      })}
+    </section>
+  );
 }
 
 export default Product;
