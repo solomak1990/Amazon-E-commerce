@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from "./product.module.css";
-import Rating from "@mui/material/Rating";
+import Rating from "../../Pages/Rating/Rating";
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ function ProductCard({product}) {
         {/* Rating */}
         <div className={classes.rating}>
           <Rating value={rating.rate} precision={0.1} />
-          <small>{rating.count}</small>
+          <small>{rating?.count}</small>
         </div>
 
         <div>
