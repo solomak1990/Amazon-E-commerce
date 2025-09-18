@@ -1,16 +1,16 @@
 {
   "homepage": "https://solomak1990.github.io/Amazon-E-Commerce",
-  "name": "amazon-e-commerce",
+  "name": "Amazon-E-Commerce",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy": "vite build",
-    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
