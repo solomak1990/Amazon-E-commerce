@@ -5,8 +5,8 @@ function CurrencyFormat({ amount }) {
     return null; 
   }
 
-  const formattedAmount = `$${amount.toFixed(2)}`;
-  // const formattedAmount = number(amount).format("$0,0.00")
+  // const formattedAmount = `$${amount.toFixed(2)}`;
+  const formattedAmount = number(amount).format("$0,0.00")
 
   return <span>{formattedAmount}</span>;
 }
