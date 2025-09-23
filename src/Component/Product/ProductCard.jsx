@@ -3,13 +3,13 @@ import classes from "./product.module.css";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
-
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
+
 import Rating from "@mui/material/Rating";
 
 function ProductCard({ product, flex, renderDesc, renderAdd, amount }) {
   if (!product || !product.image) {
-    return null; 
+    return null; // or return a placeholder component or default content
   }
 
   const { image, title, id, rating, price, description } = product;
@@ -43,14 +43,12 @@ function ProductCard({ product, flex, renderDesc, renderAdd, amount }) {
       <Link to={`/products/${id}`}>
         <img src={image} alt="" className={classes.img_container} />
       </Link>
-      <div className={classes.product_button}>
+      <div>
         <h3>{title}</h3>
         {renderDesc && <div style={{ maxWidth: "750px" }}>{description}</div>}
-        
         <div className={classes.rating}>
-          
           <Rating value={3.5} precision={0.1} />
-          <small>{60}</small>
+          <small>{rating?.count}</small>
         </div>
         <p>Price: ${price}</p>
         {!hideButton && (

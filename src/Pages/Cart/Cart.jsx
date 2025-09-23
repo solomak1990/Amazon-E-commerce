@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import Layout from "../../Component/Layout/Layout";
 import ProductCard from "../../Component/Product/ProductCard";
 import { Link } from "react-router-dom";
-
+import { DataContext } from "../../Component/DataProvider/DataProvider";
 import CurrencyFormat from "../../Component/CurrencyFormat/CurrencyFormat";
 import classes from "./Cart.module.css";
-
+import { Type } from "../../Utility/action.type";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { TiArrowSortedUp } from "react-icons/ti";
 

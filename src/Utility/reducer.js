@@ -2,6 +2,7 @@ import { Type } from "./action.type";
 
 export const initialState = {
   basket: [],
+  user: null,
 };
 
 export const reducer = (state, action) => {
@@ -29,25 +30,35 @@ export const reducer = (state, action) => {
         };
       }
 
-      case Type.REMOVE_FROM_BASKET:
-        const updatedBasket = state.basket
-          .map((item) => {
-            if (item.id === action.id) {
-              return {
-                ...item,
-                amount: item.amount - 1,
-              };
-            }
-            return item;
-          })
-          .filter((item) => item.amount > 0);
-      
-        return {
-          ...state,
-          basket: updatedBasket,
-        };
+    case Type.REMOVE_FROM_BASKET:
+      const updatedBasket = state.basket
+        .map((item) => {
+          if (item.id === action.id) {
+            return {
+              ...item,
+              amount: item.amount - 1,
+            };
+          }
+          return item;
+        })
+        .filter((item) => item.amount > 0);
 
-  
+      return {
+        ...state,
+        basket: updatedBasket,
+      };
+
+    case Type.EMPTY_BASKET:
+      return {
+        ...state,
+        basket: [],
+      };
+    case Type.SET_USER:
+      return {
+        ...state,
+        user: action.user,
+      };
+
     default:
       return state;
   }

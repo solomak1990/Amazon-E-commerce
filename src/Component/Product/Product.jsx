@@ -12,7 +12,7 @@ function Product() {
       .get("https://fakestoreapi.com/products/")
       .then((res) => {
         setProducts(res.data);
-       
+        // console.log(setProducts)
         setIsLoading(false);
       })
       .catch((err) => {
