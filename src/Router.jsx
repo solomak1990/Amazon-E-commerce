@@ -7,13 +7,13 @@ import Orders from "./Pages/Orders/Orders";
 import Cart from "./Pages/Cart/Cart";
 import Results from "./Pages/Results/Results";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-// import { Elements } from "@stripe/react-stripe-js";
-// import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import ProtectedRoute from "./Component/ProtectedRoute/ProtectedRoute";
 
-// const stripePromise = loadStripe(
-//   "pk_test_51OixrZIQOoGC5BCayLWvGNjhYQCr21qhY53TBfTHkaJF6Mlf6MdwAC1HUGgYzqKV6Jp2h7BTp7RxdKxw8TYKOYXV00okonf64Y"
-// );
+const stripePromise = loadStripe(
+  "pk_test_51SAS5MBKPJejTEzkgLu5JdiGn2TQnoCPMr0rVRc8TncR1JvTKhue54A3OpzLgmQQTYCF0JZ35xb2oHgMNjh1Z9M800QWnhLBxG"
+);
 
 function Routering() {
   return (
@@ -22,7 +22,7 @@ function Routering() {
         <Route path="/" element={<Landing />} />
         <Route path="/auth" element={<Auth />} />
 
-        {/* <Route
+        <Route
           path="/payments"
           element={
             <ProtectedRoute
@@ -46,7 +46,7 @@ function Routering() {
               <Orders />
             </ProtectedRoute>
           }
-        /> */}
+        />
 
         <Route path="/category/:categoryName" element={<Results />} />
         <Route path="/cart" element={<Cart />} />

@@ -62,25 +62,32 @@ function Footer() {
         </div>
         <hr />
         <div className={classes.logo_container1}>
-          <img
-            src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-            alt=""
-            className={classes.logo_img}
-          />
-          <p className={classes.logo_lng}>
-            <TbWorld />
-            English
-          </p>
-
-          <p className={classes.logo_price}>USD -U.S.Dollar</p>
-
-          <p className={classes.logo_flag}>
+          <div>
             <img
-              src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
+              className={classes.logo_img}
+              src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt=""
             />
-            United States
-          </p>
+          </div>
+          <div className={classes.allspan}>
+            <span className={classes.logo_lng}>
+              <TbWorld />
+              English
+            </span>
+
+            <span className={classes.logo_price}>USD -U.S.Dollar</span>
+
+            <span className={classes.logo_flag}>
+              <img
+                src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
+                alt=""
+              />
+              United States
+            </span>
+          </div>
+        </div>
+        <div className={classes.copy_write}>
+          &copy; 1996-2025, Amazon.com, Inc. or its affiliates
         </div>
       </div>
     </>
