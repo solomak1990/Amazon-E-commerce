@@ -9,7 +9,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Amazon-E-commerce/',
+  // base: '/Amazon-E-commerce/',
 });
 
  
